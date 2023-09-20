@@ -1,3 +1,31 @@
+body{
+  margin: 0;
+}
+header{
+  display: flex;
+  background-color: azure;
+  justify-content: space-between;
+}
+
+h1{
+  width: 40%;
+}
+
 h1 a {
   text-decoration: none;
+  color: black;
+}
+
+nav{
+  width: 60%;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li a{
+  list-style: none;
+  text-decoration: none;
+  color: black;
 }

@@ -3,16 +3,22 @@
 import Link from 'next/link';
 import { useParams,useRouter } from 'next/navigation';
 
-export function Control() {
+export function Header() {
   const params = useParams();
   const router = useRouter();
-  const id= params.id;
+  // const id= params.id;
+  // const navHeaders = ['Skills','Project','Career'];
+  const navHeaders = ['one','two','three'];
   return (
-    <ul>
-      <li>
-        <Link href='/create'>Create</Link>
-      </li>
-      {id ?
+    <header>
+      <h1>
+        <Link href='/' className="noUnderline">Home</Link>
+      </h1>
+      <nav>{navHeaders.map(nav=>{
+        return <li key={nav}><Link href={nav}>{nav}</Link></li>
+      })}
+      </nav>
+      {/* {id ?
       <>
         <li>
           <Link href={"/update/"+id}>Update</Link>
@@ -21,14 +27,14 @@ export function Control() {
           <input type='button' value="delete" onClick={()=>{
             const options = { method : 'DELETE'}
             fetch(process.env.NEXT_PUBLIC_API_URL+'topics/'+id,options).then(re=>re.json())
-            .then(res=>{
+            .then(()=>{
               router.push('/');
               router.refresh()
             })
           }}></input>
         </li>
       </>
-      :null}
-    </ul>
+      :null} */}
+   </header>
   );
 }

@@ -10,7 +10,7 @@ export default function Update(){
   const params = useParams();
   const id = params.id;
   useEffect(()=>{
-    fetch(process.env.NEXT_PUBLIC_API_URL+'/topics/'+id).then(re=>re.json()).then(res=>{
+    fetch(process.env.NEXT_PUBLIC_API_URL+'topics/'+id).then(re=>re.json()).then(res=>{
       setTitle(res.title);
       setBody(res.body);
     })

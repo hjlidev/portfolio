@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "html",
-      "body": "html is..."
+      "body": "htmlTest"
     },
     {
       "id": 2,
@@ -26,6 +26,11 @@
       "title": "next?",
       "body": "nextJs!",
       "id": 6
+    },
+    {
+      "title": "createTEst",
+      "body": "createTEst!",
+      "id": 7
     }
   ],
   "posts": [
