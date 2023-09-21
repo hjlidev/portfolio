@@ -3,6 +3,7 @@ import Link from 'next/link'
 import './globals.css'
 import { Control } from './Control';
 import { Header } from './Header';
+import { NavStatus } from './NavStatus';
 
 export const metadata = {
   title: 'Web tutorials',
