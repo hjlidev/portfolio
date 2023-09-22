@@ -3,7 +3,6 @@ import Link from 'next/link'
 import './globals.css'
 import { Control } from './Control';
 import { Header } from './Header';
-import { NavStatus } from './NavStatus';
 
 export const metadata = {
   title: 'Web tutorials',
@@ -16,7 +15,6 @@ export default async function RootLayout({ children }) {
   return (
     <html>
       <body>
-        {/* <h1><Link href="/">Home</Link></h1> */}
         <Header/>
         <ol>
         {topics.map((topic)=>{
