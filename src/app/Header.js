@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { NavStatus } from './NavStatus';
 import { usePathname } from 'next/navigation';
+import { useState,useEffect } from "react";
 
 export function Header() {
   const navHeaders = ['Skills','Project','Career','GitHub'];
@@ -10,6 +11,8 @@ export function Header() {
   const pathname = usePathname().replace('/','');
  
   const current = pathname===''?null:pathname.replace(pathname[0],pathname[0].toUpperCase());
+
+
   return (
     <>
       <header>
@@ -23,6 +26,12 @@ export function Header() {
           return <li key={nav}><Link className='headHove' href={nav.toLowerCase()}>{nav}</Link></li>
         })}
         </nav>
+        {/* <div className='hamburgerMenu' onClick={()=>{
+          document.querySelector('nav').style.display = 'inline-grid'
+        }}>Ham</div> */}
+        <div className='hamburgerMenu' onClick={()=>{
+          document.querySelector('nav').style.display = 'inline-grid'
+        }}>Ham</div>
       </header>
       <NavStatus stat = {current}/>
    </>
