@@ -44,7 +44,7 @@
     font-weight: lighter;
   }
   
-  .headHove:hover{
+  .headHover:hover{
     color: rgb(33, 33, 184);
   }
 
@@ -87,11 +87,31 @@
     font-weight: lighter;
   }
   
-  .headHove:hover{
+  .headHover:hover{
     color: rgb(33, 33, 184);
   }
 
   .hamburgerMenu{
     display: none;
   }
+}
+
+.copyright {
+  font-size: 12px;
+  color: #ffffff;
+  position: relative;
+  z-index: 101;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 10px;
+  background: #142559;
+}
+
+.inlineCls{
+  display: inline-grid;
+}
+
+.flexCls{
+  display: flex;
 }
