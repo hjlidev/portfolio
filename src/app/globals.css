@@ -1,21 +1,11 @@
-@media (max-width : 900px){
-  body{
-    margin: 0;
-  }
-  header{
-    display: flex;
-    background-color: azure;
-    justify-content: space-between;
-    position: relative;
-  }
-  
+@media (max-width : 900px){ 
   h1{
     width: 80%;
   }
   nav{
     width: 40%;
     height: 300%;
-    background: url('/public/next.svg') no-repeat;
+    /* background: url('/public/next.svg') no-repeat; */
     /* display: inline-grid; */
     display: none;
     list-style: none;
@@ -51,18 +41,13 @@
   .hamburgerMenu{
     display: block;
   }
+
+  .inlineCls{
+    display: inline-grid;
+  }
 }
 
 @media (min-width : 901px){
-  body{
-    margin: 0;
-  }
-  header{
-    display: flex;
-    background-color: azure;
-    justify-content: space-between;
-  }
-  
   h1{
     width: 60%;
   }
@@ -94,6 +79,24 @@
   .hamburgerMenu{
     display: none;
   }
+
+  .flexCls{
+    display: flex;
+  }
+}
+
+body{
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header{
+  display: flex;
+  background-color: azure;
+  justify-content: space-between;
+  position: relative;
 }
 
 .copyright {
@@ -106,12 +109,9 @@
   height: 30px;
   padding: 0 10px;
   background: #142559;
+  bottom: 0;
 }
 
-.inlineCls{
-  display: inline-grid;
-}
-
-.flexCls{
-  display: flex;
+.hide{
+  display: none;
 }
