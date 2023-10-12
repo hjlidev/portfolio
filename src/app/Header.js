@@ -10,7 +10,8 @@ export function Header() {
   const pathname = usePathname().replace('/','');
  
   const current = pathname===''?null:pathname.replace(pathname[0],pathname[0].toUpperCase());
-    const [resize, setResize] = useState();
+  const [resize, setResize] = useState();
+
   useEffect(() => {
     window.addEventListener("resize", () => {
       setResize(window.innerWidth);
@@ -29,6 +30,16 @@ export function Header() {
     };
 
   }, []);
+
+  useEffect(() => {
+    if (current !== null) {
+      // current가 null이 아닌 경우, nav에 클래스 추가
+      const navElement = document.querySelector('nav');
+      if (navElement) {
+        navElement.classList.add('hide');
+      }
+    }
+  }, [current]);
     
   return (
     <>
@@ -36,13 +47,14 @@ export function Header() {
         <h1>
           <Link href='/'>Home</Link>
         </h1>
-        <nav className={resize<=900 ?"hide inlineCls":"flexCls"}>
+        <nav className={(resize<=900) ?"hide inlineCls":"flexCls"}>
           {navHeaders.map(nav=>{
             if(nav==='GitHub'){
               return <li key={nav}><Link className='headHover' href="https://github.com/hjlidev">{nav}</Link></li>
             }
             return <li key={nav}><Link className='headHover' href={nav.toLowerCase()}>{nav}</Link></li>
-          })}
+          })
+          }
         </nav>
         <div className='hamburgerMenu' onClick={function(){
           document.querySelector('nav').classList.toggle('hide');
